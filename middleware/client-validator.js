@@ -4,12 +4,12 @@ module.exports = [
   check('nombres', 'Nombres del cliente incompleto')
     .isString()
     .notEmpty()
-    .isLength({ max: 100 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('apellidos', 'Apellidos del cliente incompleto')
     .isString()
     .notEmpty()
-    .isLength({ max: 100 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('tipoDocumento')
     .isString()
@@ -37,27 +37,25 @@ module.exports = [
     })
     .trim(),
   check('numeroDocumento', 'Numero de documento del cliente incompleto')
-    .isNumeric()
     .notEmpty()
-    .isLength({ max: 100 }),
+    .isFloat({ min: 0, max: 999999999999999999999999999999 }),
   check('fechaNacimiento', 'Fecha de nacmiento del cliente incompleto')
-    .isDate()
+    .isDate({ format: 'YYYY/MM/DD' })
     .notEmpty()
     .isLength({ max: 100 }),
   check('nacionalidad', 'Nacionalidad del cliente incompleto')
     .isString()
     .notEmpty()
-    .isLength({ max: 100 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('direccion', 'Dirección del cliente incompleto')
     .isString()
     .notEmpty()
-    .isLength({ max: 150 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('telefono', 'Telefono del cliente incompleto')
-    .isNumeric()
     .notEmpty()
-    .isLength({ max: 100 }),
+    .isFloat({ min: 0, max: 999999999999999999999999999999 }),
   check('email', 'Email del cliente incompleto')
     .notEmpty()
     .isLength({ max: 100 })
@@ -87,8 +85,4 @@ module.exports = [
       }
     })
     .trim(),
-  check('total', 'Total incompleto')
-    .isNumeric()
-    .notEmpty()
-    .isLength({ max: 100 }),
 ];

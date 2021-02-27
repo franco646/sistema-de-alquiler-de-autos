@@ -32,6 +32,7 @@ exports.postAddCar = async (req, res, next) => {
   try {
     const errores = validationResult(req);
     if (!errores.isEmpty()) {
+      console.log(errores);
       fs.unlink(req.file.path, () => {});
       const error = new Error(`se han producido el siguiente error " ${errores[0].msg} " en ${errores[0].param} al intentar validar el formulario`);
       error.statusCode = 500;

@@ -5,26 +5,24 @@ module.exports = [
   check('marca', 'Todos los campos son obligatorios')
     .notEmpty()
     .isString()
-    .isLength({ max: 30 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('modelo', 'Todos los campos son obligatorios')
     .notEmpty()
     .isString()
-    .isLength({ max: 30 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('año', 'Todos los campos son obligatorios')
     .notEmpty()
-    .isNumeric()
-    .isLength({ max: 4 })
-    .withMessage('Ingrese un año correcto'),
+    .isFloat({ min: 1000, max: 3000 })
+    .withMessage('El año ingresado es incorrecto'),
   check('kms', 'Todos los campos son obligatorios')
     .notEmpty()
-    .isNumeric()
-    .isLength({ max: 12 }),
+    .isFloat({ min: 0, max: 99999999999999999999999999999999999999999999999999 }),
   check('color', 'Todos los campos son obligatorios')
     .notEmpty()
     .isString()
-    .isLength({ max: 20 })
+    .isLength({ min: 3, max: 50 })
     .trim(),
   check('imagen', 'Ingrese una imagen')
     .custom((value, { req }) => {
@@ -85,6 +83,5 @@ module.exports = [
     .trim(),
   check('precioAlquiler', 'Todos los campos son obligatorios')
     .notEmpty()
-    .isNumeric()
-    .isLength({ max: 10 }),
+    .isFloat({ min: 0, max: 99999999999999999999999999999999999999999999999999 }),
 ];

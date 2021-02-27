@@ -122,7 +122,7 @@ const RentalsList = ({ token, BASE_URL }) => {
     const data = window.URL.createObjectURL(newBlob);
     const link = document.createElement('a');
     link.href = data;
-    link.download = 'file.pdf';
+    link.download = 'alquiler.pdf';
     link.click();
     setTimeout(() => {
       window.URL.revokeObjectURL(data);

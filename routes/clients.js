@@ -7,9 +7,9 @@ const rentalsController = require('../controller/rentals');
 const isAuth = require('../middleware/is-auth');
 const validateRental = require('../middleware/client-validator');
 
-router.post('/add-client', isAuth, validateRental, rentalsController.postAddClient);
+router.post('/add-rental', isAuth, validateRental, rentalsController.postAddClient);
 
-router.get('/rentals', rentalsController.getRentals);
+router.get('/rentals', isAuth, rentalsController.getRentals);
 
 router.post('/return-car/:rentalId', isAuth, rentalsController.postReturnCar);
 
