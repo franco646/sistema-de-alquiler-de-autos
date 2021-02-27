@@ -3,7 +3,7 @@ import Alert from 'react-bootstrap/Alert';
 import Car from './Car/Car.component';
 
 const cars = ({
-  list, filter, onDelete, onEdit, onDetail,
+  list, filter, onDelete, onEdit, onDetail, BASE_URL
 }) => {
   let filteredList = list;
   if (filter === 'Disponibles') {
@@ -16,6 +16,7 @@ const cars = ({
     filteredList.length > 0
       ? filteredList.map((auto) => (
         <Car
+          BASE_URL={BASE_URL}
           onDelete={() => onDelete(auto.id)}
           onEdit={() => onEdit(auto.id)}
           onDetail={() => onDetail(auto.id)}

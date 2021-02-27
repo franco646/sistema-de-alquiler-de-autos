@@ -134,7 +134,7 @@ const CarsList = ({ token, BASE_URL }) => {
       <Switch>
         <Route path={`${path}/car-detail`}>
           {selectedCar
-            ? <SingleCar car={selectedCar} onDelete={deleteCarHandler} />
+            ? <SingleCar car={selectedCar} onDelete={deleteCarHandler} BASE_URL={BASE_URL}/>
             : <Redirect to="/cars" />}
         </Route>
         <Route path="/cars">
@@ -149,6 +149,7 @@ const CarsList = ({ token, BASE_URL }) => {
           {cars
             ? (
               <Cars
+                BASE_URL={BASE_URL}
                 list={cars}
                 filter={filter}
                 onDetail={carDetailHandler}

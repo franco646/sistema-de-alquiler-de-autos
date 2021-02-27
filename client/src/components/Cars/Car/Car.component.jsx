@@ -11,7 +11,7 @@ import { FiTrash2 } from 'react-icons/fi';
 import style from './car.module.scss';
 
 const Car = ({
-  car, onDetail, onEdit, onDelete,
+  car, onDetail, onEdit, onDelete, BASE_URL
 }) => {
   const { url } = useRouteMatch();
   return (
@@ -41,7 +41,7 @@ const Car = ({
             </Card.Body>
           </Col>
           <Col className={`card-img-container ${style.cardImgContainer}`} sm={3}>
-            <Card.Img src={`http://localhost:8080/${car.imagen}`} className={style.cardImg} />
+            <Card.Img src={`${BASE_URL}/${car.imagen}`} className={style.cardImg} />
           </Col>
         </Row>
       </Container>

@@ -35,8 +35,8 @@ const Login = () => {
       validationSchema={LoginSchema}
       onSubmit={loginHandler}
       initialValues={{
-        email: '',
-        password: '',
+        email: 'usuario@test.com',
+        password: 'usuario',
       }}
     >
       {({

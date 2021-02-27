@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import style from './SingleCar.module.scss';
 
-const SingleCar = ({ car, onDelete }) => {
+const SingleCar = ({ car, onDelete, BASE_URL }) => {
   const history = useHistory();
   return (
     <Card className={`shadow p-3 mb-3 bg-white rounded ${style.card}`} data-testid="single-car-component">
@@ -68,7 +68,7 @@ const SingleCar = ({ car, onDelete }) => {
             </Card.Body>
           </Col>
           <Col className={`card-img-container ${style.cardImgContainer}`} lg="6">
-            <Card.Img src={`http://localhost:8080/${car.imagen}`} />
+            <Card.Img src={`${BASE_URL}/${car.imagen}`} />
           </Col>
         </Row>
       </Container>
