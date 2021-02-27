@@ -1,0 +1,11 @@
+
+$theme-colors: (
+    "primary": #60B9E5,
+    "danger": #E6AA60
+);
+
+.app {
+    font-family: 'Roboto', sans-serif;
+}
+
+@import "~bootstrap/scss/bootstrap";

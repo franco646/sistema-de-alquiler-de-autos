@@ -1,0 +1,38 @@
+li {
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.nav-link {
+    color: white !important;
+    padding-left: 0%;
+}
+
+.nav-link:hover {
+    color: #60B9E5 !important;
+}
+
+.active {
+    color:  #E6AA60 !important;
+}
+
+.active:hover {
+    color: #e1983f !important;
+    
+}
+
+.logo {
+    border-right: 1px solid #E6AA60;
+}

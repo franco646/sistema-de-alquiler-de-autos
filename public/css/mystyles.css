@@ -1,0 +1,7 @@
+.oculto {
+  display: none;
+}
+
+.container.is-max-desktop {
+  max-width: 600px;
+}

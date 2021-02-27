@@ -1,0 +1,58 @@
+.toolsBar {
+    border-bottom: 1px solid #6e6e6e34;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 0% !important;
+    
+
+    .dropdown {
+        margin-inline-start: 15%;
+    }
+
+    button {
+        width: 200px;
+    }
+
+    a {
+        margin-inline-end: 15%;
+        color: black !important;
+    }
+} 
+
+
+
+@media (max-width: 785px) {
+
+    .toolsBar {
+        .dropdown {
+            margin-inline-start: 3%;
+        }
+
+        button {
+            width: 200px;
+        }
+
+        a {
+            margin-inline-end: 3%;
+        }
+    }
+}
+
+
+@media (max-width: 355px) {
+
+    .toolsBar {
+        .dropdown {
+            margin-inline: auto;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        a {
+            margin-inline-end: 3%;
+        }
+
+    }
+}
