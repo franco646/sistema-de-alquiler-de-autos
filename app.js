@@ -40,6 +40,7 @@ const storage = multer.diskStorage({
   },
 });
 
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.use(multer({ storage }).single('imagen'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -61,6 +62,10 @@ app.use((err, req, res, next) => {
   const statusError = err.statusCode || 500;
   const mensaje = err.mesaje;
   res.status(statusError).json({ mensaje });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
 app.listen(port);
