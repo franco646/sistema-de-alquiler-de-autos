@@ -11,6 +11,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 12,
   },
+  ignorePatterns: ['client/**'],
   rules: {
     'linebreak-style': 0,
     'no-param-reassign': 0,
